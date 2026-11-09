@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Símbolo Rota Alternativa">
+  <path d="M50 8C27 8 12 25 12 47c0 21 21 38 38 45 17-7 38-24 38-45C88 25 73 8 50 8Z" fill="none" stroke="#F5FDEE" stroke-width="3"/>
+  <path d="M29 31c13 0 13 16 26 18 11 2 17-1 18 8 1 8-7 10-15 13" fill="none" stroke="#EFC04A" stroke-linecap="round" stroke-width="5"/>
+  <circle cx="29" cy="31" r="5" fill="#EFC04A"/>
+  <circle cx="58" cy="70" r="5" fill="#F5FDEE"/>
+</svg>
