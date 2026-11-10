@@ -362,6 +362,36 @@ p { margin-bottom: 18px; color: var(--cinza); }
   border-radius: var(--raio-grande);
   background: var(--branco);
 }
+
+.btn-group {
+  display: flex !important;
+  justify-content: center !important; 
+  align-items: center !important;
+  gap: 15px !important;               
+  width: 100% !important;            
+  margin-bottom: 25px !important;    
+  background-color:#003D2E ;
+  padding: 15px;
+}
+
+
+.btn-group a {
+  display: inline-block !important;
+  color:#003D2E!important;         
+  background-color:#E4E4E4 !important; 
+  padding: 8px 16px !important;      
+  text-decoration: none !important;  
+  border-radius: 50px !important;     
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
+  font-size: 14px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+
+.btn-group a.active {
+  background-color:#EFC04A !important; 
+}
+
 .profession-card--reverse { grid-template-columns: 1.06fr 1fr; }
 .profession-card--reverse .profession-card__media { grid-column: 2; grid-row: 1; }
 .profession-card--reverse .profession-card__content { grid-column: 1; grid-row: 1; }
