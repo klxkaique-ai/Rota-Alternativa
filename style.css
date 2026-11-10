@@ -200,7 +200,7 @@ p { margin-bottom: 18px; color: var(--cinza); }
   box-shadow: 0 10px 24px rgba(0, 61, 46, .12);
 }
 .button:hover::after { color: var(--verde-escuro); }
-.button--light { border-color: var(--branco); background: var(--branco); color: var(--verde-escuro); }
+.button--light { border-color: var(--branco); background: var(--amarelo); color: var(--verde-escuro); }
 .button--light::after { color: var(--verde-escuro); }
 .button--light:hover { border-color: var(--amarelo); background: var(--amarelo); }
 .text-link {
