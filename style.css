@@ -132,6 +132,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .container { width: 1160px; margin: 0 auto; }
 .eyebrow {
+  font-family:monospace;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -471,7 +472,7 @@ p { margin-bottom: 18px; color: var(--cinza); }
   align-items: flex-start;
   gap: 17px;
   padding: 21px;
-  border: 1px solid rgba(0, 61, 46, .14);
+  border: 145px solid rgba(0, 61, 46, .14);
   border-radius: 15px;
   background: var(--branco);
   text-decoration: none;
