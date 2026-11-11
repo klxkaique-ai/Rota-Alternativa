@@ -12,9 +12,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  min-width: 1200px;
   margin: 0;
   background: var(--branco);
   color: var(--verde-escuro);
@@ -22,7 +21,7 @@ body {
   font-size: 16px;
   line-height: 1.65;
 }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid var(--amarelo); outline-offset: 4px; }
@@ -47,8 +46,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   border-bottom: 1px solid rgba(245, 253, 238, .16);
 }
 .site-header__inner {
-  width: 1160px;
-  height: 92px;
+  gap: 16px;
+  width: min(1160px, calc(100% - 32px));
+  min-height: 92px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -129,7 +129,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .main-nav a:hover::after,
 .main-nav a[aria-current="page"]::after { transform: scaleX(1); }
 
-.container { width: 1160px; margin: 0 auto; }
+.container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
 .eyebrow {
   font-family:monospace;
   display: inline-flex;
@@ -151,6 +151,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 h1, h2, h3, h4, p { margin-top: 0; }
 h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  hyphens: auto;
   color: var(--verde-escuro);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
@@ -560,108 +562,145 @@ p { margin-bottom: 18px; color: var(--cinza); }
 .sources-section > .container > h3 { margin: 43px 0 13px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
 figure { margin: 0; }
 
+/* ==========================================================
+   RESPONSIVIDADE — vale para as quatro páginas
+   ========================================================== */
 
-/* ==celular == */
+/* Tablet e telas menores que o layout de desktop */
+@media (max-width: 960px) {
+  .site-header__inner { flex-wrap: wrap; padding: 16px 0; }
+  .main-nav { gap: 26px; }
 
+  .hero-layout { grid-template-columns: 1fr; gap: 36px; min-height: 0; }
+  .hero-copy { padding: 8px 0; }
+  .hero-visual { height: 400px; }
+  .hero-visual::before { right: -10px; }
+  .hero-visual__label { right: 0; }
 
-body.pagina-oportunidades {
-    min-width: 0;
+  .section-heading-row,
+  .profession-intro__inner,
+  .quiz-heading { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .section-heading-row .text-link { margin-bottom: 0; white-space: normal; }
+
+  .insight-band__inner,
+  .closing-cta__inner { flex-direction: column; align-items: flex-start; gap: 28px; }
+
+  .career-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .page-hero__layout,
+  .quiz-intro__layout,
+  .about-hero__layout { grid-template-columns: 1fr; gap: 36px; }
+  .page-hero__image,
+  .quiz-intro__image,
+  .about-hero__image { height: 300px; }
+
+  .about-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  .profession-card,
+  .profession-card--reverse { grid-template-columns: 1fr; }
+  .profession-card--reverse .profession-card__media,
+  .profession-card__media { grid-column: 1; grid-row: 1; min-height: 340px; }
+  .profession-card--reverse .profession-card__content,
+  .profession-card__content { grid-column: 1; grid-row: 2; }
+  .profession-card__media img { min-height: 340px; }
+
+  .quiz-options { grid-template-columns: repeat(2, 1fr); }
+  .platform-grid { grid-template-columns: repeat(2, 1fr); }
+  .source-list { grid-template-columns: 1fr; }
+
+  .site-footer__top { flex-direction: column; gap: 28px; }
 }
 
-.pagina-oportunidades .container,
-.pagina-oportunidades .site-header__inner {
-    width: calc(100% - 32px);
-    max-width: 1160px;
-    margin-left: auto;
-    margin-right: auto;
-}
-@media (max-width: 700px) {
+/* Celular */
+@media (max-width: 600px) {
+  h1,
+  .page-hero h1,
+  .profession-intro__inner h1,
+  .quiz-intro h1,
+  .about-hero h1 { font-size: 34px; letter-spacing: -.8px; }
+  h2,
+  .profession-intro h2,
+  .quiz-heading h2,
+  .insight-band h2,
+  .closing-cta h2,
+  .about-prose h2,
+  .sources-section h2 { font-size: 28px; letter-spacing: -.7px; }
+  .about-aside h2 { font-size: 25px; }
+  h3 { font-size: 22px; }
+  .lead,
+  .page-hero .lead,
+  .quiz-intro .lead,
+  .about-hero .lead { font-size: 16px; }
 
-    .pagina-oportunidades .site-header__inner {
-        height: auto;
-        padding: 18px 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
+  /* cabeçalho */
+  .site-header__inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .brand-name { font-size: 21px; }
+  .brand-caption { letter-spacing: 1.4px; }
+  .main-nav { width: 100%; flex-wrap: wrap; gap: 4px 20px; }
+  .main-nav a { padding: 9px 0; font-size: 13px; }
 
-    .pagina-oportunidades .main-nav {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 10px 18px;
-    }
+  /* espaçamento vertical das seções */
+  .home-hero { padding: 28px 0 44px; }
+  .section { padding: 56px 0; }
+  .insight-band,
+  .closing-cta { padding: 44px 0; }
+  .profession-intro { padding: 44px 0 28px; }
+  .profession-list { padding-bottom: 56px; }
+  .quiz-intro { padding: 40px 0 32px; }
+  .quiz-section { padding: 48px 0 56px; }
+  .platform-section { padding: 52px 0 56px; }
+  .about-hero { padding: 40px 0 48px; }
+  .about-content { padding: 52px 0 56px; }
+  .sources-section { padding: 52px 0 56px; }
 
-    .pagina-oportunidades .main-nav a {
-        font-size: 13px;
-    }
+  /* home */
+  .hero-actions { flex-wrap: wrap; gap: 16px 22px; }
+  .hero-actions .button,
+  .closing-cta .button,
+  .insight-band .button { width: 100%; }
+  .hero-visual { height: 300px; border-radius: 110px 20px 20px 20px; }
+  .hero-visual::before { top: -10px; right: 0; width: 70px; height: 70px; }
+  .hero-visual__label { right: 12px; bottom: 12px; left: 12px; max-width: none; padding: 12px 14px; }
+  .career-grid { grid-template-columns: 1fr; }
+  .career-card__image { height: 200px; }
+  .career-card__body p { min-height: 0; }
+  .value-grid { grid-template-columns: 1fr; gap: 0; }
+  .value-card { padding-right: 0; }
 
-  
-    .pagina-oportunidades .quiz-intro {
-        padding: 40px 0;
-    }
+  /* hero das páginas internas */
+  .page-hero__image,
+  .quiz-intro__image,
+  .about-hero__image { height: 220px; }
 
-    .pagina-oportunidades .quiz-intro__layout {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
+  /* filtro de profissões */
+  .btn-group { gap: 10px !important; padding: 14px 16px !important; }
+  .btn-group a { padding: 8px 14px !important; font-size: 13px; text-align: center; }
 
-    .pagina-oportunidades .quiz-intro h1 {
-        font-size: 36px;
-    }
+  /* cartões de profissão */
+  .profession-card { margin-bottom: 20px; border-radius: 22px; }
+  .profession-card__media,
+  .profession-card--reverse .profession-card__media { min-height: 240px; }
+  .profession-card__media img { min-height: 240px; }
+  .profession-card__content { padding: 24px 20px; }
+  .profession-card__content h2 { font-size: 26px; }
+  .profession-facts { grid-template-columns: 1fr; }
+  .qualification-note { overflow-wrap: anywhere; }
 
-    .pagina-oportunidades .quiz-intro__image {
-        height: 220px;
-    }
+  /* quiz e plataformas */
+  .quiz-question { padding: 20px 16px; }
+  .quiz-question h3 { font-size: 16px; }
+  .quiz-options { grid-template-columns: 1fr; }
+  .platform-grid { grid-template-columns: 1fr; gap: 14px; }
+  .platform-card { min-height: 0; padding: 18px; }
+  .platform-card p { font-size: 13px; }
 
-  
-    .pagina-oportunidades .quiz-section {
-        padding: 45px 0;
-    }
+  /* sobre */
+  .about-aside { padding: 22px; }
+  .about-values { grid-template-columns: 1fr; gap: 0; margin-top: 36px; }
+  .source-list { gap: 0; }
+  .source-list li { overflow-wrap: anywhere; }
 
-    .pagina-oportunidades .quiz-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .pagina-oportunidades .quiz-heading h2 {
-        font-size: 30px;
-    }
-
-    .pagina-oportunidades .quiz-question {
-        padding: 20px 16px;
-    }
-
-    .pagina-oportunidades .quiz-question h3 {
-        font-size: 15px;
-    }
-
-    .pagina-oportunidades .quiz-options {
-        grid-template-columns: 1fr;
-    }
-
-    
-    .pagina-oportunidades .platform-section {
-        padding: 45px 0;
-    }
-
-    .pagina-oportunidades .platform-grid { grid-template-columns: 1fr; gap: 14px;
-    }
-
-    .pagina-oportunidades .platform-card { min-height: auto; padding: 18px; border-width: 1px;
-    }
-    .pagina-oportunidades .platform-card h3 {font-size: 17px;
-    }
-    .pagina-oportunidades .platform-card p { font-size: 13px;
-    }
-    .pagina-oportunidades .closing-cta {padding: 40px 0;
-    }
-    .pagina-oportunidades .closing-cta__inner {flex-direction: column;align-items: flex-start;gap: 22px;
-    }
-    .pagina-oportunidades .closing-cta h2 {font-size: 30px; }
-    .pagina-oportunidades .site-footer__top,
-    .pagina-oportunidades .site-footer__bottom {flex-direction: column; gap: 20px; }
-
-    .pagina-oportunidades .footer-links { flex-wrap: wrap; gap: 15px; }
+  /* rodapé */
+  .footer-links { flex-wrap: wrap; gap: 12px 22px; }
+  .site-footer__bottom { flex-direction: column; gap: 10px; }
 }
