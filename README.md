@@ -11,3 +11,6 @@ Além do uso de IA para a criação inicial do design e estrutura do trabalho.
 
 👥🔎 Integrantes do projeto: 
 Kaique Leandro Xavier
+Adan de Castro Bazalia
+Melissa Veiga Pereira
+Marcos Bueno de Souza
