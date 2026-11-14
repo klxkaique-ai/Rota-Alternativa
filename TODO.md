@@ -38,8 +38,8 @@
 
 ## Andamento
 - [x] Blueprint confirmado; escopo e direção visual aprovados.
-- [ ] Conteúdo profissional pesquisado com fontes confiáveis.
-- [ ] Imagens finais organizadas em `img/`.
-- [ ] Quatro páginas HTML, CSS compartilhado e navegação concluídos.
-- [ ] Conferência de caminhos, links, conteúdo final e consistência visual concluída.
+- [x] Conteúdo profissional pesquisado com fontes confiáveis.
+- [x] Imagens finais organizadas em `img/`.
+- [x] Quatro páginas HTML, CSS compartilhado e navegação concluídos.
+- [x] Conferência de caminhos, links, conteúdo final e consistência visual concluída.
 # Rota-Alternativa-v.-IA
