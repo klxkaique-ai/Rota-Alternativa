@@ -9,6 +9,8 @@ CSS3: estilização, identidade visual, layouts e responsividade;
 Bootstrap 5.3: utilizado para auxiliar na construção do layout e na responsividade do index.html;
 Além do uso de IA para a criação inicial do design e estrutura do trabalho.
 
+Apresentação em slide: https://canva.link/a33kuwu1x0k0bpv
+
  Integrantes do projeto: 
 Adan de Castro Bazalia
 Kaique Leandro Xavier
