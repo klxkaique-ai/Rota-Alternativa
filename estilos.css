@@ -152,7 +152,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 h1, h2, h3, h4, p { margin-top: 0; }
 h1, h2, h3, h4 {
   overflow-wrap: break-word;
-  hyphens: auto;
   color: var(--verde-escuro);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
@@ -466,7 +465,20 @@ p { margin-bottom: 18px; color: var(--cinza); }
 .quiz-disclaimer { margin: 21px 0 0; color: var(--cinza); font-size: 12px; }
 
 .platform-section { padding: 82px 0 95px; background: var(--verde-claro); }
-.platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+.platform-grid { display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr)); 
+gap: 17px;
+}
+
+.platform-card img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: block;
+}
+
 .platform-card {
   display: flex;
   min-height: 145px;
@@ -607,6 +619,8 @@ figure { margin: 0; }
   .quiz-options { grid-template-columns: repeat(2, 1fr); }
   .platform-grid { grid-template-columns: repeat(2, 1fr); }
   .source-list { grid-template-columns: 1fr; }
+
+  .btn-group { flex-wrap: wrap; }
 
   .site-footer__top { flex-direction: column; gap: 28px; }
 }
