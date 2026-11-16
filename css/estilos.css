@@ -465,7 +465,20 @@ p { margin-bottom: 18px; color: var(--cinza); }
 .quiz-disclaimer { margin: 21px 0 0; color: var(--cinza); font-size: 12px; }
 
 .platform-section { padding: 82px 0 95px; background: var(--verde-claro); }
-.platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 17px; }
+.platform-grid { display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr)); 
+gap: 17px;
+}
+
+.platform-card img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: block;
+}
+
 .platform-card {
   display: flex;
   min-height: 145px;
